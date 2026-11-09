@@ -1,197 +1,109 @@
-# Mutual-Fund-Performance-Analysis-Dashboard
-Mutual Fund Performance Analysis using Python and Power BI
-Course: Data Analytics
-Project: Mutual Fund Performance Analysis Dashboard
-Tools Used: Python, Excel, Power BI
-1. Business Problem
-Mutual fund investors often face difficulties in comparing thousands of available funds
-based on multiple financial metrics such as returns, risk, expense ratio, and fund size.
-Making investment decisions without proper analysis can lead to poor portfolio
-performance.
-The objective of this project is to build an interactive analytical dashboard that helps
-investors compare mutual funds, identify top-performing funds, evaluate risk-adjusted
-returns, and make informed investment decisions.
-2. Project Objectives
-The primary objectives of this project are:
-• Analyze mutual fund performance across different categories.
-• Compare funds using multiple return periods (1 Year, 3 Years, and 5 Years).
-• Evaluate investment risk using Beta and Sharpe Ratio.
-• Identify the best-performing mutual funds.
-• Study the relationship between risk and returns.
-• Provide interactive dashboards for business decision-making.
-3. Dataset Description
-The dataset contains detailed information about various Indian mutual funds.
-Important Columns
-Column Description
-Scheme Name Name of Mutual Fund
-AMC Name Asset Management Company
-Column Description
-Category Fund Category
-Returns 1Y One-Year Return
-Returns 3Y Three-Year Return
-Returns 5Y Five-Year Return
-Expense Ratio Annual Fund Expense
-Sharpe Ratio Risk-adjusted Return Measure
-Beta Market Risk Indicator
-Fund Size Assets Under Management (₹ Cr)
-Risk Level Investment Risk Category
-4. Methodology
-The project was completed in the following stages:
-Step 1: Data Collection
-Collected the mutual fund dataset containing performance metrics and fund details.
-Step 2: Data Cleaning
-Performed data cleaning using Python:
-• Removed duplicate records.
-• Handled missing values.
-• Corrected inconsistent category names.
-• Converted data types.
-• Removed unwanted columns.
-Step 3: Exploratory Data Analysis (EDA)
-EDA was performed using:
-• Pandas
-• Matplotlib
-• Seaborn
-The analysis focused on:
-• Return distributions
-• Category comparisons
-• Expense ratio analysis
-• Risk analysis
-• Fund size distribution
-Step 4: Feature Engineering
-Created additional fields including:
-• Composite Score
-• Rank
-• Selected Return (Dynamic Measure)
-• Average Return
-• Average Sharpe Ratio
-Step 5: Dashboard Development
-Developed an interactive Power BI dashboard using:
-• KPI Cards
-• Bar Charts
-• Scatter Plot
-• Pie Chart
-• Summary Table
-• Dynamic Slicers
-• Tooltips
-• Drill-through
-• Cross Filtering
-5. Tools and Technologies
-Tool Purpose
-Python Data Cleaning & Analysis
-Pandas Data Manipulation
-NumPy Numerical Operations
-Matplotlib Data Visualization
-Seaborn Statistical Visualization
-Excel Data Validation
-Power BI Dashboard Development
-DAX Measures and KPIs
-6. Dashboard Features
-The dashboard contains the following visualizations.
-KPI Cards
-• Average Return
-• Average Expense Ratio
-• Average Sharpe Ratio
-• Total Fund Size
-Top 30 Mutual Funds
-Displays the top 30 mutual funds based on the selected return period.
-Features:
-• Dynamic ranking
-• Tooltips
-• Drill-down
-• Drill-through
-Average Returns by Category
-Compares average returns across categories.
-Supports:
-• Category hierarchy
-• Dynamic return period
-Risk (Beta) vs Return Scatter Plot
-Analyzes the relationship between investment risk and returns.
-Bubble Size:
-• Fund Size
-Category Distribution
-Pie chart showing the number of funds in each category.
-Summary Table
-Displays:
-• Scheme Name
-• AMC
-• Category
-• Return
-• Expense Ratio
-• Sharpe Ratio
-• Beta
-• Rank
-Slicers
-Interactive filters include:
-• Category
-• Return Period
-• AMC
-• Risk Level
-7. Business Insights
-Insight 1
-Equity mutual funds generated the highest average returns compared to other
-categories.
-Insight 2
-Several top-performing funds achieved high returns while maintaining moderate
-expense ratios.
-Insight 3
-Funds with higher Sharpe Ratios generally delivered better risk-adjusted performance.
-Insight 4
-The scatter plot indicates that higher risk does not always guarantee higher returns.
-Insight 5
-Large fund size does not necessarily imply superior returns, emphasizing the need for
-comprehensive performance evaluation.
-Insight 6
-Long-term investment performance (5-Year Return) provides a better indication of
-consistent fund performance than short-term returns.
-Insight 7
-Interactive filtering enables investors to compare funds by category, AMC, and risk level,
-improving investment analysis.
-8. Key Findings
-• Equity funds outperform most categories in long-term returns.
-• Low expense ratios alone do not guarantee higher returns.
-• Sharpe Ratio is an effective metric for evaluating risk-adjusted performance.
-• Dynamic return-period analysis helps compare short-term and long-term
-investment strategies.
-• Investors should evaluate multiple financial metrics instead of relying on returns
-alone.
-9. Recommendations
-Based on the analysis:
-• Investors should prioritize funds with high Sharpe Ratios and consistent long-
-term returns.
-• Expense Ratio should be considered along with return performance.
-• Diversifying investments across categories can reduce portfolio risk.
-• Long-term returns provide a more reliable measure than short-term
-performance.
-• Investors should analyze both risk and return before making investment
-decisions.
-10. Dashboard Interactivity
-The dashboard includes:
-• Dynamic slicers
-• Cross filtering
-• Drill-through pages
-• Drill-down hierarchy
-• Interactive tooltips
-• Dynamic DAX measures
-• Top N filtering
-These features improve user experience and enable deeper data exploration.
-11. Limitations
-• Analysis is based on historical data and does not guarantee future returns.
-• Market conditions may change over time.
-• External economic factors are not included in the analysis.
-12. Future Enhancements
-Possible improvements include:
-• Live mutual fund data integration using APIs.
-• Portfolio recommendation system.
-• Predictive return forecasting using Machine Learning.
-• Benchmark comparison against market indices.
-• Mobile-optimized dashboard.
-• AI-powered investment recommendations.
-13. Conclusion
-This project successfully demonstrates how Python and Power BI can be combined to
-analyze mutual fund performance and support investment decision-making. The
-interactive dashboard enables users to compare funds across different return periods,
-evaluate risk-adjusted performance, and explore insights using dynamic filtering, drill-
-through, and cross-filtering features. The solution provides a user-friendly analytical
-platform that helps investors identify high-performing mutual funds while considering
-risk, expenses, and long-term consistency.
-Dashboard Screenshots
+# Mutual Fund Analysis & Ranking
+
+A data-analysis project that cleans a dataset of Indian mutual funds, explores it, and ranks every fund using a weighted **Composite Score** built from returns, cost, and risk-adjusted performance metrics.
+
+## Overview
+
+The notebook (`mutualfundsprojectsimrn.ipynb`) walks through a complete data-analysis workflow:
+
+1. **Load** the dataset (`comprehensive_mutual_funds_data.csv`, 814 funds × 20 columns).
+2. **Inspect** shape, columns, data types, unique values, missing values, and duplicates.
+3. **Clean** the data (handle missing values, strip `%` and `,` characters, convert text to numbers).
+4. **Explore** categories, AMCs (fund houses), min/max values, and feature correlations (heatmap).
+5. **Engineer features**: normalise key metrics, compute a Composite Score, and rank funds.
+6. **Export** the cleaned and ranked data to Excel.
+
+## Dataset
+
+File: `comprehensive_mutual_funds_data.csv` (not included in this repo; place it in the project root).
+
+| Column | Description |
+|---|---|
+| `scheme_name` | Name of the mutual fund scheme |
+| `min_sip` / `min_lumpsum` | Minimum SIP / lump-sum investment amount |
+| `expense_ratio` | Annual fund management fee (%) |
+| `fund_size_cr` | Fund size (₹ crore) |
+| `fund_age_yr` | Age of the fund (years) |
+| `fund_manager` | Fund manager name |
+| `sortino`, `sharpe` | Risk-adjusted return ratios |
+| `alpha`, `beta` | Performance vs. benchmark / market sensitivity |
+| `sd` | Standard deviation (volatility) |
+| `risk_level`, `rating` | Risk label and fund rating |
+| `amc_name` | Asset management company |
+| `category`, `sub_category` | Fund classification |
+| `returns_1yr`, `returns_3yr`, `returns_5yr` | Annualised returns over 1, 3, and 5 years |
+
+## Methodology
+
+### Data cleaning
+- `returns_3yr` (~2.6% missing) and `returns_5yr` (~20.5% missing) filled with the **mean**.
+- All numeric columns: `%` and `,` removed, converted with `pd.to_numeric(errors="coerce")`, remaining gaps filled with the **median**.
+- `-` placeholders replaced with `NaN`, then median-filled; remaining text gaps set to `"Unknown"`.
+
+### Composite Score
+Each of the 8 features is scaled to 0–1 with `MinMaxScaler`. Since lower is better for **expense ratio** and **beta**, those two are inverted (`1 - value`). The score is then a weighted sum:
+
+| Feature | Weight |
+|---|---|
+| `returns_1yr` | 0.20 |
+| `returns_3yr` | 0.20 |
+| `returns_5yr` | 0.20 |
+| `expense_ratio` (inverted) | 0.15 |
+| `sharpe` | 0.10 |
+| `sortino` | 0.05 |
+| `alpha` | 0.05 |
+| `beta` (inverted) | 0.05 |
+
+Funds are then ranked (dense ranking, highest score first) and the top 10 / 20 / 30 funds are extracted.
+
+## Output
+
+- `MutualFund_Clean.xlsx`: cleaned dataset with `Composite Score` and `Rank` columns, sorted by score.
+
+## Getting Started
+
+### Prerequisites
+- Python 3.10+
+- Jupyter (JupyterLab or Notebook)
+
+### Installation
+
+```bash
+# 1. (Optional) create a virtual environment
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+
+# 2. Install the pinned dependencies
+pip install -r requirement.txt
+
+# 3. Install packages the notebook uses that are not in requirement.txt
+pip install scikit-learn seaborn matplotlib openpyxl
+```
+
+> **Note:** `requirement.txt` does not currently list `scikit-learn`, `seaborn`, `matplotlib`, or `openpyxl`, which the notebook needs (for `MinMaxScaler`, plotting, and `to_excel`). Adding them to the file is recommended.
+
+### Run
+
+```bash
+jupyter lab
+```
+
+Open `mutualfundsprojectsimrn.ipynb`, make sure the CSV is in the same folder, and run all cells.
+
+## Project Structure
+
+```
+.
+├── mutualfundsprojectsimrn.ipynb        # Analysis notebook
+├── requirement.txt                      # Python dependencies
+├── comprehensive_mutual_funds_data.csv  # Input data (add this yourself)
+└── MutualFund_Clean.xlsx                # Generated output
+```
+
+## Tech Stack
+
+Python · pandas · NumPy · scikit-learn · seaborn · Matplotlib · Jupyter
+
+## Disclaimer
+
+This project is for educational and analytical purposes only and is not financial advice. Past returns do not guarantee future performance.
